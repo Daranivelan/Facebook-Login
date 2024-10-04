@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Shopping Online Store</title>
+    
+    <!-- Google Fonts Link for Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pVnH8ENdN+I34+E6Tqv/OXQ+jcjrEWaw1wYJ8LecEQgV5UsmF3kKp82PcGRG/d+eJNxGmM/YFgfA9jlmFq9aQw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <!-- Left Section: Title -->
+        <div class="left-section">
+          <h1 class="myH1"><i class="fas fa-shopping-cart"></i> E-Shopping</h1>
+        </div>
+
+        <!-- Right Section: Search and Logout -->
+        <div class="right-section">
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchBox"
+              class="search-box"
+              placeholder="Search for products..."
+            />
+            <button class="search-btn" onclick="searchProducts()">Search</button>
+          </div>
+          <div class="logout-button">
+            <button onclick="handleLogout()">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <ul class="nav-items">
+          <li><a href="#" data-category="default" onclick="filterCategory(event)">Home</a></li>
+          <li><a href="#" data-category="men's clothing" onclick="filterCategory(event)">Men</a></li>
+          <li><a href="#" data-category="women's clothing" onclick="filterCategory(event)">Women</a></li>
+          <li><a href="#" data-category="jewelery" onclick="filterCategory(event)">Accessories</a></li>
+          <li><a href="#" data-category="electronics" onclick="filterCategory(event)">Electronics</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <div id="products" class="products-container"></div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 E Shopping. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

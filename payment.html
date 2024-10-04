@@ -1,0 +1,54 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - E Shopping</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="title-container">
+        <h1 class="myH1">E-Shopping</h1>
+      </div>
+    </header>
+
+    <main class="content">
+      <form
+        id="checkoutForm"
+        onsubmit="onPaymentSubmit(event)"
+      >
+        <h2>Delivery Address</h2>
+        <label for="phone">Phone No:</label>
+        <input type="text" id="phone" name="phone" required /><br />
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required /><br />
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required /><br />
+        <label for="zip">ZIP Code:</label>
+        <input type="text" id="zip" name="zip" required /><br />
+
+        <h2>Payment Method</h2>
+        <div style="margin-left: 50px">
+          <input type="radio" name="method" value="Cash on Delivery" checked />
+          <span>Cash on Delivery</span><br />
+          <input type="radio" name="method" value="Card Payment" />
+          <span>Card Payment</span><br />
+          <input type="radio" name="method" value="UPI Payment" />
+          <span>UPI Payment</span>
+        </div>
+
+        <div class="button-purchase-cont">
+          <button type="submit">Complete Purchase</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 E Shopping. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
