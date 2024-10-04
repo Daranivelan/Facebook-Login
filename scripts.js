@@ -23,27 +23,6 @@ function handleLogin(event) {
     (user) => user.username === username && user.password === password
   );
 
-  FB.api("/me", { fields: "name,email" }, function (response) {
-    localStorage.setItem("fbUser", JSON.stringify(response));
-    window.location.href = "main.html";
-  });
-
-  function checkLoginState() {
-    function checkLoginState() {
-      FB.getLoginStatus(function (response) {
-        if (response.status === "connected") {
-          // If the user is logged in, redirect to another page
-          FB.api("/me", { fields: "name,email" }, function (response) {
-            localStorage.setItem("fbUser", JSON.stringify(response));
-            window.location.href = "main.html"; // Change this to your desired page
-          });
-        } else {
-          console.log("User not authenticated");
-        }
-      });
-    }
-  }
-
   if (user) {
     localStorage.setItem("isLoggedIn", "true");
     window.location.href = "main.html";
@@ -51,7 +30,26 @@ function handleLogin(event) {
     alert("Invalid username or password.");
   }
 }
+FB.api("/me", { fields: "name,email" }, function (response) {
+  localStorage.setItem("fbUser", JSON.stringify(response));
+  window.location.href = "main.html";
+});
 
+function checkLoginState() {
+  function checkLoginState() {
+    FB.getLoginStatus(function (response) {
+      if (response.status === "connected") {
+        // If the user is logged in, redirect to another page
+        FB.api("/me", { fields: "name,email" }, function (response) {
+          localStorage.setItem("fbUser", JSON.stringify(response));
+          window.location.href = "main.html"; // Change this to your desired page
+        });
+      } else {
+        console.log("User not authenticated");
+      }
+    });
+  }
+}
 /**
  * Handle sign-up form submission
  * @param {Event} event
